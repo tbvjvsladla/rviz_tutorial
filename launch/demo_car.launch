@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+    <param name="robot_description" textfile="$(find rviz_tutorial)/urdf/demo_car.urdf"/>
+
+    <param name="use_gui" value="ture"/>
+   
+    <node name="rviz_visualizer" pkg="rviz" type="rviz" required="true" 
+                args="-d $(find rviz_tutorial)/rviz/demo_car.rviz"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" 
+                type="robot_state_publisher"/>
+
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui"
+                type="joint_state_publisher_gui"/>
+</launch>
